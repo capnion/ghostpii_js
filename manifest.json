@@ -1,0 +1,27 @@
+{
+    "manifest_version": 2,
+    "name": "Extension Test",
+    "version": "0.1.1",
+
+    "permissions": [
+      "storage"
+    ],
+
+    "icons": { "16": "images/Ghost PII Logo 16.png",
+      "48": "images/Ghost PII Logo 48.png",
+      "128": "images/Ghost PII Logo 128.png" },
+
+    "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'",
+    "content_scripts": [
+        {
+          "matches": [
+            "https://*.tiqlish.com/*"
+          ],
+          "js": ["jQuery.js","content.js"]
+        }
+    ],
+
+    "browser_action": {
+      "default_popup": "popup.html"
+     } 
+}
